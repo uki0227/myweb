@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四位數減法直式拆解模擬器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>四位數減法直式拆解模擬器</h2>
+            <p>透過「下一步」觀察退位與連續退位的過程。</p>
+        </header>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <div class="input-group">
+                <label for="minuend">被減數：</label>
+                <input type="number" id="minuend" max="9999" min="0" value="4002">
+            </div>
+            <div class="input-group">
+                <label for="subtrahend">減數：</label>
+                <input type="number" id="subtrahend" max="9999" min="0" value="198">
+            </div>
+            <div class="btn-group">
+                <button id="btn-random">隨機出題</button>
+            </div>
+        </div>
+
+        <!-- 步驟控制 -->
+        <div class="step-controls">
+            <button id="btn-prev" disabled>上一步</button>
+            <button id="btn-next">下一步</button>
+            <button id="btn-reset">重新開始</button>
+        </div>
+
+        <!-- 錯誤提示 -->
+        <div id="error-msg" class="error-msg"></div>
+
+        <!-- 直式算式展示區 -->
+        <div class="math-board">
+            <!-- 借位顯示列 -->
+            <div class="row borrow-row">
+                <div class="cell"></div>
+                <div class="cell" id="b3"></div>
+                <div class="cell" id="b2"></div>
+                <div class="cell" id="b1"></div>
+                <div class="cell" id="b0"></div>
+            </div>
+            <!-- 被減數列 -->
+            <div class="row minuend-row">
+                <div class="cell"></div>
+                <div class="cell" id="m3"></div>
+                <div class="cell" id="m2"></div>
+                <div class="cell" id="m1"></div>
+                <div class="cell" id="m0"></div>
+            </div>
+            <!-- 減數列 -->
+            <div class="row subtrahend-row">
+                <div class="cell sign">-</div>
+                <div class="cell" id="s3"></div>
+                <div class="cell" id="s2"></div>
+                <div class="cell" id="s1"></div>
+                <div class="cell" id="s0"></div>
+            </div>
+            <!-- 分隔線 -->
+            <div class="divider"></div>
+            <!-- 結果列 -->
+            <div class="row result-row">
+                <div class="cell"></div>
+                <div class="cell" id="r3"></div>
+                <div class="cell" id="r2"></div>
+                <div class="cell" id="r1"></div>
+                <div class="cell" id="r0"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
